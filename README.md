@@ -3,27 +3,27 @@
 
 Multiplayer online game using Phaser + WebSocket (Socket.IO).
 
-## Control
-```
-1. Mouse
-- Left: move
-- Right: fire
+*Coming soon
+- matchmaking servers
+- sticky connections
+- detailed instructions*
 
-2. Keyboard
-- Up: move
-- Left / Right: rotate
-- Spacebar: fire
-```
+### Build instructions
+#### Docker & Google Kubernetes Engine
 
-## Gifshot
+Run these in the Google Cloud Shell
 
-![Demo](https://i.imgur.com/Eqtse6G.gif)
+1. ```git clone https://github.com/vikramba/blocker-web-game```
+2. ```docker build -t <image_name>:<tag> .```
+3. ```docker tag <image_name>:<tag> gcr.io/<gcp_project_number>/<image_name>:<tag>```
+4. ```docker push gcr.io/<gcp_project_number>/<image_name>:<tag>```
+5. Create a GKE cluster
+6. Create a workload with the pushed container image
+7. Expose the workload on TCP  port 8001 via LoadBalancer service type
+8. Open the http://<LB IP>:8001
 
-[![Blocker - Game play 1](https://raw.githubusercontent.com/jojoee/blocker/master/screenshot/play1.jpg "Blocker - Game play 1")](http://blocker.jojoee.com/)
 
-[![Blocker - Debug](https://raw.githubusercontent.com/jojoee/blocker/master/screenshot/debug.jpg "Blocker - Debug")](http://blocker.jojoee.com/)
-
-## Getting Started
+#### Localhost & VM build
 1. Install [Node.js](https://nodejs.org/en/)
 2. Install Nodemon Bower Gulp: `npm install -g nodemon yarn bower pm2`
 3. Install dependencies: `yarn && bower install`
@@ -40,6 +40,19 @@ Start server side
 - prod: `pm2 start app.js`
 ```
 
+Open http://localhost:8001 on the browser after running the server side locally
+
+## Control
+```
+1. Mouse
+- Left: move
+- Right: fire
+
+2. Keyboard
+- Up: move
+- Left / Right: rotate
+- Spacebar: fire
+```
 ## Note
 ```
 1. Code guideline & Naming we use
