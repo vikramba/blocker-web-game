@@ -42,6 +42,10 @@ Start server side
 
 Open http://localhost:8001 on the browser after running the server side locally
 
+#### Architecture
+
+![Architecture](https://storage.googleapis.com/myutestbuckettets/Blank%20diagram.png)
+
 ## Control
 ```
 1. Mouse
